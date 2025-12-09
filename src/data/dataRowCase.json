@@ -1,0 +1,72 @@
+[
+  {
+    "date": "2025-10-05 - 18:00pm",
+    "description": "Caso actualizado por el cliente.",
+    "title": "Llamada",
+    "type": "Llamada",
+    "color": "green"
+  },
+  {
+    "date": "2025-09-12 - 09:30am",
+    "description": "Revisión de documentos enviados.",
+    "title": "Revisión",
+    "type": "Revision",
+    "color": "blue"
+  },
+  {
+    "date": "2025-08-22 - 15:15pm",
+    "description": "Se recibió mensaje vía WhatsApp.",
+    "title": "Mensaje",
+    "type": "Mensaje",
+    "color": "green"
+  },
+  {
+    "date": "2025-11-01 - 11:00am",
+    "description": "Reunión presencial en oficina.",
+    "title": "Reunión",
+    "type": "Reunion",
+    "color": "blue"
+  },
+  {
+    "date": "2025-07-14 - 17:45pm",
+    "description": "Se envió correo con instrucciones.",
+    "title": "Correo",
+    "type": "Correo",
+    "color": "green"
+  },
+  {
+    "date": "2025-10-30 - 13:20pm",
+    "description": "Cliente realizó consulta rápida.",
+    "title": "Consulta",
+    "type": "Consulta",
+    "color": "yellow"
+  },
+  {
+    "date": "2025-09-05 - 08:00am",
+    "description": "Recordatorio de audiencia enviado.",
+    "title": "Recordatorio",
+    "type": "Recordatorio",
+    "color": "yellow"
+  },
+  {
+    "date": "2025-12-18 - 19:10pm",
+    "description": "Actualización del estado del caso.",
+    "title": "Actualización",
+    "type": "Actualizacion",
+    "color": "blue"
+  },
+  {
+    "date": "2025-04-02 - 10:30am",
+    "description": "Llamada no atendida por el cliente.",
+    "title": "Llamada perdida",
+    "type": "Llamada",
+    "color": "red"
+  },
+  {
+    "date": "2025-06-25 - 14:00pm",
+    "description": "Documento adjunto recibido.",
+    "title": "Documento",
+    "type": "Documento",
+    "color": "green"
+  }
+]
