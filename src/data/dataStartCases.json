@@ -1,0 +1,119 @@
+[
+  {
+    "title": "Breach of Contract",
+    "code": "EXP-2024-001",
+    "tags": ["civil", "contract", "breach"],
+    "stages": [
+      { "title": "Case Intake", "date": "2024-01-10", "status": "concluded" },
+      {
+        "title": "Evidence Collection",
+        "date": "2024-01-20",
+        "status": "concluded"
+      },
+      {
+        "title": "Preliminary Hearing",
+        "date": "2024-02-05",
+        "status": "current"
+      }
+    ],
+    "currentStage": "Preliminary Hearing",
+    "caseDescription": "Civil case related to breach of contract."
+  },
+  {
+    "title": "Labor Dispute",
+    "code": "EXP-2023-014",
+    "tags": ["labor", "employment", "dispute"],
+    "stages": [
+      {
+        "title": "Client Consultation",
+        "date": "2023-11-01",
+        "status": "concluded"
+      },
+      { "title": "Case Filing", "date": "2023-11-10", "status": "concluded" },
+      {
+        "title": "Evidence Collection",
+        "date": "2023-11-25",
+        "status": "concluded"
+      },
+      { "title": "Court Hearings", "date": "2024-01-15", "status": "current" },
+      { "title": "Final Arguments", "date": "", "status": "pending" }
+    ],
+    "currentStage": "Court Hearings",
+    "caseDescription": "Labor dispute between employee and company."
+  },
+  {
+    "title": "Property Damage",
+    "code": "EXP-2024-027",
+    "tags": ["criminal", "property-damage"],
+    "stages": [
+      { "title": "Case Intake", "date": "2024-02-01", "status": "concluded" },
+      { "title": "Case Filing", "date": "2024-02-08", "status": "concluded" },
+      {
+        "title": "Preliminary Hearing",
+        "date": "2024-02-20",
+        "status": "concluded"
+      },
+      {
+        "title": "Evidence Review",
+        "date": "2024-03-05",
+        "status": "concluded"
+      },
+      {
+        "title": "Court Hearings",
+        "date": "2024-04-01",
+        "status": "concluded"
+      },
+      { "title": "Judgment", "date": "2024-05-10", "status": "current" }
+    ],
+    "currentStage": "Judgment",
+    "caseDescription": "Criminal case involving minor property damage."
+  },
+  {
+    "title": "Custody Mediation",
+    "code": "EXP-2024-033",
+    "tags": ["family", "custody", "mediation"],
+    "stages": [
+      {
+        "title": "Client Consultation",
+        "date": "2024-03-01",
+        "status": "concluded"
+      },
+      { "title": "Mediation", "date": "2024-03-15", "status": "current" },
+      { "title": "Settlement Agreement", "date": "", "status": "pending" }
+    ],
+    "currentStage": "Mediation",
+    "caseDescription": "Family law case focused on custody agreement."
+  },
+  {
+    "title": "Commercial Litigation",
+    "code": "EXP-2023-009",
+    "tags": ["commercial", "litigation", "closed"],
+    "stages": [
+      { "title": "Case Intake", "date": "2023-09-12", "status": "concluded" },
+      {
+        "title": "Evidence Collection",
+        "date": "2023-09-25",
+        "status": "concluded"
+      },
+      {
+        "title": "Preliminary Hearing",
+        "date": "2023-10-10",
+        "status": "concluded"
+      },
+      {
+        "title": "Court Hearings",
+        "date": "2023-11-05",
+        "status": "concluded"
+      },
+      {
+        "title": "Final Arguments",
+        "date": "2024-01-20",
+        "status": "concluded"
+      },
+      { "title": "Judgment", "date": "2024-02-28", "status": "concluded" },
+      { "title": "Case Closed", "date": "2024-03-10", "status": "current" }
+    ],
+    "currentStage": "Case Closed",
+    "caseDescription": "Commercial litigation case resolved by court ruling."
+  }
+]

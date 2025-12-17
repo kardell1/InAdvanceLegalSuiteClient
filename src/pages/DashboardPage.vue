@@ -1,21 +1,25 @@
 <script setup lang="ts">
 import { useRouter } from "vue-router";
-import RowCase from "../components/RowCase.vue";
-
-import dataRowCaseRaw from "../data/dataRowCase.json";
+// import dataRowCaseRaw from "../data/dataRowCase.json";
 import CardCase from "../components/CardCase.vue";
-
-// Definir tipo para TS
-type RowCaseType = {
-  date: string;
-  description: string;
+import dataStartCaseRaw from "../data/dataStartCases.json";
+export type CaseStage = {
   title: string;
-  type: string;
-  color: string;
+  date: string;
+  status: string;
 };
 
+type LegalCase = {
+  title: string;
+  stages: CaseStage[];
+  currentStage: string; // Name of the current stage
+  caseDescription: string; // General case description
+  tags: string[];
+  code: string;
+};
+const dataStartCase: LegalCase[] = dataStartCaseRaw as LegalCase[];
 // Hacerle cast al JSON
-const dataRowCase = dataRowCaseRaw as RowCaseType[];
+// const dataRowCase = dataRowCaseRaw as RowCaseType[];
 
 const router = useRouter();
 
@@ -61,65 +65,42 @@ const handleQuit = () => {
           Resumen de tus procesos legales vigentes
         </p>
       </div>
-      <!-- card donde vemos los eventos  -->
-      <div class="grid grid-cols-2 gap-5 max-sm:grid-cols-1">
-        <!-- los evento futuros que tiene el cliente  -->
-        <div class="bg-white p-5 rounded-md shadow-sm">
-          <div class="flex justify-between items-center">
-            <div class="flex items-center gap-2">
-              <span class="w-7 h-7">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-                  <!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-                  <path
-                    d="M216 64C229.3 64 240 74.7 240 88L240 128L400 128L400 88C400 74.7 410.7 64 424 64C437.3 64 448 74.7 448 88L448 128L480 128C515.3 128 544 156.7 544 192L544 480C544 515.3 515.3 544 480 544L160 544C124.7 544 96 515.3 96 480L96 192C96 156.7 124.7 128 160 128L192 128L192 88C192 74.7 202.7 64 216 64zM216 176L160 176C151.2 176 144 183.2 144 192L144 240L496 240L496 192C496 183.2 488.8 176 480 176L216 176zM144 288L144 480C144 488.8 151.2 496 160 496L480 496C488.8 496 496 488.8 496 480L496 288L144 288z"
-                  />
-                </svg>
-              </span>
-              <p class="font-semibold">Agenda Legal</p>
-            </div>
-            <p class="text-slate-600 text-[0.85rem]">Proximos eventos</p>
+      <!-- los eventos actuales del cliente  -->
+      <div class="bg-white p-5 rounded-md shadow-sm flex flex-col gap-2">
+        <!-- titulo y boton para ver los demas casos -->
+        <div class="flex justify-between">
+          <!-- titulo de la sub-seccion   -->
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 text-blue-600">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 640 640"
+                fill="currentColor"
+              >
+                <!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                <path
+                  d="M128 160C128 142.3 142.3 128 160 128L320 128C337.7 128 352 142.3 352 160L352 448L448 448L448 320C448 302.3 462.3 288 480 288L544 288C561.7 288 576 302.3 576 320C576 337.7 561.7 352 544 352L512 352L512 480C512 497.7 497.7 512 480 512L320 512C302.3 512 288 497.7 288 480L288 192L192 192L192 320C192 337.7 177.7 352 160 352L96 352C78.3 352 64 337.7 64 320C64 302.3 78.3 288 96 288L128 288L128 160z"
+                />
+              </svg>
+            </span>
+            <p class="font-semibold">Actividad Reciente</p>
           </div>
-          <div class="mt-5 flex flex-col gap-3">
-            <RowCase
-              v-for="(item, i) in dataRowCase"
-              :key="i"
-              :title="item.title"
-              :date="item.date"
-              :description="item.description"
-              :type="item.type"
-              :color="item.color"
-              icon=""
-            />
-          </div>
+          <p
+            class="cursor-pointer text-blue-600 text-[0.85rem] hover:underline"
+          >
+            Ver todos los eventos
+          </p>
         </div>
-        <!-- los eventos actuales del cliente  -->
-        <div class="bg-white p-5 rounded-md shadow-sm flex flex-col gap-2">
-          <!-- titulo y boton para ver los demas casos -->
-          <div class="flex justify-between">
-            <div class="flex items-center gap-2">
-              <span class="w-6 h-6 text-blue-600">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 640 640"
-                  fill="currentColor"
-                >
-                  <!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-                  <path
-                    d="M128 160C128 142.3 142.3 128 160 128L320 128C337.7 128 352 142.3 352 160L352 448L448 448L448 320C448 302.3 462.3 288 480 288L544 288C561.7 288 576 302.3 576 320C576 337.7 561.7 352 544 352L512 352L512 480C512 497.7 497.7 512 480 512L320 512C302.3 512 288 497.7 288 480L288 192L192 192L192 320C192 337.7 177.7 352 160 352L96 352C78.3 352 64 337.7 64 320C64 302.3 78.3 288 96 288L128 288L128 160z"
-                  />
-                </svg>
-              </span>
-              <p class="font-semibold">Actividad Reciente</p>
-            </div>
-            <p
-              class="cursor-pointer text-blue-600 text-[0.85rem] hover:underline"
-            >
-              Ver todos los eventos
-            </p>
-          </div>
-          <div>
-            <CardCase />
-          </div>
+        <!-- informacion de cada caso  -->
+        <div :key="i" v-for="(data, i) in dataStartCase">
+          <CardCase
+            :caseDescription="data.caseDescription"
+            :code="data.code"
+            :currentStage="data.currentStage"
+            :stages="data.stages"
+            :tag="data.tags"
+            :title="data.title"
+          />
         </div>
       </div>
     </main>
