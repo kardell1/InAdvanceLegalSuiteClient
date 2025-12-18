@@ -1,11 +1,8 @@
 <script setup lang="ts">
-import returnIconCardCase from "../helper/returnIconCardCase";
-import returnColorCardCase from "../helper/returnColorCardCase";
-export type CaseStage = {
-  title: string;
-  date: string;
-  status: "concluded" | "current" | "pending";
-};
+import _returnColorCardCase from "../helper/returnColorCardCase";
+import _returnIconCardCase from "../helper/returnIconCardCase";
+
+import type { CaseStage } from "../types";
 defineProps<{
   title: string;
   stages: CaseStage[];
@@ -14,6 +11,8 @@ defineProps<{
   tag: string[];
   code: string;
 }>();
+const returnColorCardCase = _returnColorCardCase;
+const returnIconCardCase = _returnIconCardCase;
 </script>
 <template>
   <div class="border-2 border-slate-400 rounded-md p-5 flex flex-col gap-2">

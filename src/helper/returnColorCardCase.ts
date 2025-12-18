@@ -1,12 +1,12 @@
-type StatusType = "concluded" | "current" | "pending";
+const colors = [
+  { status: "concluded", bg: "bg-green-500", text: "text-green-500" },
+  { status: "current", bg: "bg-blue-500", text: "text-blue-500" },
+  { status: "pending", bg: "bg-gray-300", text: "text-gray-400" },
+];
 
-const returnColorCardCase = (status: StatusType, type: "text" | "bg") => {
-  const colors: Record<StatusType, { bg: string; text: string }> = {
-    concluded: { bg: "bg-green-500", text: "text-green-500" },
-    current: { bg: "bg-blue-500", text: "text-blue-500" },
-    pending: { bg: "bg-gray-300", text: "text-gray-400" },
-  };
-
-  return colors[status][type];
+const returnColorCardCase = (status: string, type: string) => {
+  const color = colors.find((c) => c.status === status);
+  if (!color) return ""; // Si no existe, devolvemos vacío
+  return color[type as keyof typeof color] || ""; // Accedemos dinámicamente
 };
 export default returnColorCardCase;

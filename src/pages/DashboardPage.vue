@@ -1,26 +1,9 @@
 <script setup lang="ts">
 import { useRouter } from "vue-router";
-// import dataRowCaseRaw from "../data/dataRowCase.json";
 import CardCase from "../components/CardCase.vue";
 import dataStartCaseRaw from "../data/dataStartCases.json";
-export type CaseStage = {
-  title: string;
-  date: string;
-  status: string;
-};
-
-type LegalCase = {
-  title: string;
-  stages: CaseStage[];
-  currentStage: string; // Name of the current stage
-  caseDescription: string; // General case description
-  tags: string[];
-  code: string;
-};
+import type { LegalCase } from "../types";
 const dataStartCase: LegalCase[] = dataStartCaseRaw as LegalCase[];
-// Hacerle cast al JSON
-// const dataRowCase = dataRowCaseRaw as RowCaseType[];
-
 const router = useRouter();
 
 const handleQuit = () => {
