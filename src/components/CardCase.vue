@@ -38,7 +38,7 @@ const returnIconCardCase = _returnIconCardCase;
     <!-- vemos la etapa en la que se encuentra le caso  -->
     <div class="bg-blue-50 p-3 flex flex-col gap-2 rounded-md">
       <!-- mapeo de los casos  -->
-      <div class="flex gap-5 justify-between">
+      <div class="flex gap-5 justify-between flex-wrap max-sm:justify-center">
         <div
           :key="i"
           v-for="(stage, i) in stages"
