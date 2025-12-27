@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useRouter } from "vue-router";
-import { CircleAlert, User } from "lucide-vue-next";
+import { CircleAlert, User, FileText, Download, Image } from "lucide-vue-next";
 const router = useRouter();
 const handleReturn = () => {
    router.push({ name: "dashboard" });
@@ -80,10 +80,51 @@ const handleReturn = () => {
                   </div>
                </div>
             </div>
+            <!-- secccion de Documentacion -->
             <div
                class="bg-white p-5 rounded-sm shadow-sm w-full flex flex-col gap-4 h-max max-md:w-full"
             >
-               documentacion
+               <p class="font-medium">Documentacion</p>
+               <!-- card de documento s -->
+               <div
+                  class="font-normal text-[0.80rem] flex justify-between items-center"
+               >
+                  <!-- texto del documento -->
+                  <div class="flex items-center gap-2">
+                     <span class="text-blue-600 rounded-sm bg-blue-100 p-1"
+                        ><FileText
+                     /></span>
+                     <p>Demanda inicial.pdf</p>
+                  </div>
+                  <!-- boton de descarga -->
+                  <span
+                     class="cursor-pointer hover:bg-slate-100 p-1 rounded-sm"
+                  >
+                     <Download />
+                  </span>
+               </div>
+               <div
+                  class="font-normal text-[0.80rem] flex justify-between items-center"
+               >
+                  <!-- texto del documento -->
+                  <div class="flex items-center gap-2">
+                     <span class="text-green-600 rounded-sm bg-green-100 p-1">
+                        <Image />
+                     </span>
+                     <p>Prueba despido.pdf</p>
+                  </div>
+                  <!-- boton de descarga -->
+                  <span
+                     class="cursor-pointer hover:bg-slate-100 p-1 rounded-sm"
+                  >
+                     <Download />
+                  </span>
+               </div>
+               <p
+                  class="text-center text-[0.80rem] text-slate-600 cursor-pointer hover:text-blue-600"
+               >
+                  Ver todos (12)
+               </p>
             </div>
          </div>
          <div class="flex flex-col gap-5 flex-1">
