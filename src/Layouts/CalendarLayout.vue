@@ -1,9 +1,9 @@
 <script setup lang="ts"></script>
+
 <template>
-     <!-- titulo y descripcion de la seccion -->
      <div>
           <p class="text-2xl font-bold">
-               La seccion de Dashboard se encuentra en proceso de
+               La seccion de Calendario de eventos se encuentra en proceso de
                desarrollo.....
           </p>
      </div>
